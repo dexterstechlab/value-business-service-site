@@ -437,9 +437,19 @@ body {
 }
 
 .contact-form {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 0.55rem;
+}
+
+.contact-form-honeypot {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  overflow: hidden;
 }
 
 .contact-form label,
@@ -530,6 +540,61 @@ body {
   font-size: 1.02rem;
   color: #dbe5f0;
   text-align: center;
+}
+
+@keyframes home-text-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-home .about-intro .content-wrap > h1,
+.page-home .about-intro .content-wrap > p {
+  opacity: 0;
+  transform: translateY(18px);
+  animation: home-text-reveal 1.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.page-home .about-intro .content-wrap > h1 {
+  animation-delay: 0.15s;
+}
+
+.page-home .about-intro .content-wrap > p:nth-child(2) {
+  animation-delay: 0.32s;
+}
+
+.page-home .about-intro .content-wrap > p:nth-child(3) {
+  animation-delay: 0.48s;
+}
+
+.page-home .about-intro .content-wrap > p:nth-child(4) {
+  animation-delay: 0.64s;
+}
+
+.page-home .about-intro .content-wrap > p:nth-child(5) {
+  animation-delay: 0.8s;
+}
+
+.page-home .about-intro .content-wrap > p:nth-child(6) {
+  animation-delay: 0.96s;
+}
+
+.page-home .about-intro .content-wrap > p:nth-child(7) {
+  animation-delay: 1.12s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-home .about-intro .content-wrap > h1,
+  .page-home .about-intro .content-wrap > p {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .site-footer {

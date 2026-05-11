@@ -65,7 +65,21 @@
           <p>Mon - Fri 8am - 7pm EST as needed</p>
         </aside>
 
-        <form class="contact-form" action="#" method="post">
+        <form
+          class="contact-form"
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          action="/contact.html"
+        >
+          <p class="contact-form-honeypot" aria-hidden="true">
+            <label>
+              Do not fill in this field:
+              <input type="text" name="bot-field" autocomplete="off" tabindex="-1">
+            </label>
+          </p>
+
           <label for="first-name">First Name*</label>
           <input id="first-name" name="first-name" type="text" placeholder="Your first name" required>
 
