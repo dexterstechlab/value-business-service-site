@@ -595,6 +595,10 @@ body {
     opacity: 1;
     transform: none;
   }
+
+  .footer-credit-heart {
+    animation: none;
+  }
 }
 
 .site-footer {
@@ -641,9 +645,48 @@ body {
   color: rgba(212, 224, 238, 0.88);
 }
 
-.footer-credit a {
-  text-decoration: underline;
-  text-underline-offset: 0.15em;
+.footer-credit-link {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.footer-credit-link:hover,
+.footer-credit-link:focus-visible {
+  color: #9dc8ff;
+  text-decoration: none;
+}
+
+@keyframes footer-heart-beat {
+  0%,
+  30%,
+  100% {
+    transform: scale(1);
+  }
+  5% {
+    transform: scale(1.32);
+  }
+  11% {
+    transform: scale(1);
+  }
+  17% {
+    transform: scale(1.22);
+  }
+  24% {
+    transform: scale(1);
+  }
+}
+
+.footer-credit-heart {
+  display: inline-block;
+  width: 0.95em;
+  height: 0.95em;
+  margin-left: 0.2em;
+  vertical-align: -0.12em;
+  fill: #e8a0b0;
+  transform-origin: center;
+  animation: footer-heart-beat 1s ease-in-out infinite;
 }
 
 .social-links {
