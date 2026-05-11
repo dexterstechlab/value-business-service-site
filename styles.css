@@ -532,24 +532,6 @@ body {
   text-align: center;
 }
 
-.services-strip {
-  background: #305174;
-  color: #e3ecf7;
-  padding: 1.75rem 0 2rem;
-}
-
-.services-strip h2 {
-  margin: 0 0 0.6rem;
-  color: #ffffff;
-  text-align: center;
-}
-
-.services-strip p {
-  margin: 0 auto;
-  max-width: 900px;
-  text-align: center;
-}
-
 .site-footer {
   background: var(--footer-bg);
   color: #d4e0ee;
@@ -816,8 +798,7 @@ body {
     font-size: 1.45rem;
   }
 
-  .about-intro p,
-  .services-strip p {
+  .about-intro p {
     font-size: 0.96rem;
     line-height: 1.6;
   }
