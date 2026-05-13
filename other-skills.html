@@ -6,7 +6,7 @@
   <title>What Matters to You | Value Business Service LLC</title>
   <meta
     name="description"
-    content="Share your other skills and preferences—dispatch, warehouse, technical, office, and more—so we can understand the full picture beyond driving."
+    content="Understanding what employees value supports better placements, retention, and stronger relationships—for employees, companies, and the community."
   >
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="stylesheet" href="styles.css">
@@ -52,9 +52,12 @@
       <div class="content-wrap other-skills-hero-inner">
         <h1 id="other-skills-heading">What Matters to You</h1>
         <p class="other-skills-lede">
-          If your strengths go beyond driving—or you want us to consider the full picture of what you bring—this
-          page is for you. Share your other skills and preferences on our contact form when you apply, and we will
-          factor them into how we support you.
+          Understanding what employees value is key to building a reliable and consistent workforce. The insights
+          gathered through this process help support better placements, improved retention, and stronger working
+          relationships.
+        </p>
+        <p class="other-skills-lede">
+          Better matches, lead to better outcomes, for employees, companies, and the community!
         </p>
       </div>
     </section>
@@ -123,12 +126,63 @@
           </article>
         </div>
 
-        <div class="other-skills-cta">
-          <p>
-            When you are ready, use <strong>Apply Here</strong> on the contact page and describe your other skills,
-            certifications, or ideal roles in your message. We read every note.
+        <div class="other-skills-cta" id="what-matters-form">
+          <p class="other-skills-cta-intro">
+            Use the form below to tell us about your interests, goals, and experience. We review every submission and will
+            follow up using the contact information you provide.
           </p>
-          <a class="cta-button other-skills-cta-button" href="contact.html#contact-form">Share your details</a>
+          <form
+            class="what-matters-form"
+            name="what-matters"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            action="/other-skills.html"
+          >
+            <p class="what-matters-form-honeypot" aria-hidden="true">
+              <label>
+                Do not fill in this field:
+                <input type="text" name="bot-field" autocomplete="off" tabindex="-1">
+              </label>
+            </p>
+
+            <label for="wm-full-name">Full Name*</label>
+            <input id="wm-full-name" name="full-name" type="text" placeholder="Your name" required autocomplete="name">
+
+            <label for="wm-email">Your email*</label>
+            <input id="wm-email" name="email" type="email" placeholder="Your email address" required autocomplete="email">
+
+            <label for="wm-phone">Phone Number</label>
+            <input id="wm-phone" name="phone" type="tel" placeholder="Phone number" autocomplete="tel">
+
+            <label for="wm-interests">Tell us your interests and goals*</label>
+            <textarea
+              id="wm-interests"
+              name="interests-and-goals"
+              rows="4"
+              placeholder="Interests, goals"
+              required
+            ></textarea>
+
+            <label for="wm-experience">Tell us about your experience</label>
+            <input
+              id="wm-experience"
+              name="experience"
+              type="text"
+              placeholder="Experience summary"
+              autocomplete="off"
+            >
+
+            <fieldset class="what-matters-form-fieldset">
+              <legend>Are you open to start work right away?</legend>
+              <div class="what-matters-form-options">
+                <label class="what-matters-form-option"><input type="radio" name="start-right-away" value="yes"> Yes</label>
+                <label class="what-matters-form-option"><input type="radio" name="start-right-away" value="no"> No</label>
+              </div>
+            </fieldset>
+
+            <button type="submit" class="what-matters-form-submit">Submit</button>
+          </form>
         </div>
       </div>
     </section>

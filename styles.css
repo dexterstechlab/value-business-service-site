@@ -987,6 +987,10 @@ body {
   margin-inline: auto;
 }
 
+.other-skills-lede + .other-skills-lede {
+  margin-top: 0.9rem;
+}
+
 .other-skills-pillars {
   background: #3b4d6b;
   color: #e8eef6;
@@ -1077,19 +1081,125 @@ body {
   border-top: 1px solid rgba(255, 255, 255, 0.14);
 }
 
-.other-skills-cta p {
-  margin: 0 0 1rem;
-  max-width: 40rem;
-  margin-inline: auto;
+.other-skills-cta-intro {
+  margin: 0 auto 1.35rem;
+  max-width: 36rem;
   line-height: 1.6;
   font-size: 0.98rem;
   color: rgba(222, 234, 248, 0.92);
 }
 
-.other-skills-cta-button {
-  display: inline-flex;
+.what-matters-form {
+  position: relative;
+  max-width: 26rem;
+  margin: 0 auto;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.what-matters-form-honeypot {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  overflow: hidden;
+}
+
+.what-matters-form label,
+.what-matters-form legend {
+  font-weight: 600;
+  font-size: 0.82rem;
+  color: rgba(244, 248, 255, 0.92);
+  margin-top: 0.15rem;
+}
+
+.what-matters-form input[type="text"],
+.what-matters-form input[type="email"],
+.what-matters-form input[type="tel"],
+.what-matters-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.45rem 0.55rem;
+  font: inherit;
+  font-size: 0.92rem;
+  line-height: 1.35;
+  color: #14202e;
+  background: #ffffff;
+  border: 1px solid #1a1a1a;
+  border-radius: 2px;
+  margin-bottom: 0.15rem;
+}
+
+.what-matters-form input::placeholder,
+.what-matters-form textarea::placeholder {
+  color: rgba(20, 32, 46, 0.45);
+}
+
+.what-matters-form input:focus,
+.what-matters-form textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(157, 200, 255, 0.65);
+}
+
+.what-matters-form textarea {
+  min-height: 5.5rem;
+  max-height: 14rem;
+  resize: vertical;
+}
+
+.what-matters-form-fieldset {
+  border: 0;
+  margin: 0.35rem 0 0.15rem;
+  padding: 0;
+}
+
+.what-matters-form-fieldset legend {
+  padding: 0;
+  margin-bottom: 0.35rem;
+}
+
+.what-matters-form-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.what-matters-form-option {
+  font-weight: 500;
+  display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 0.4rem;
+  margin: 0;
+}
+
+.what-matters-form-option input {
+  width: auto;
+  margin: 0;
+  accent-color: #1a1a1a;
+}
+
+.what-matters-form-submit {
+  align-self: center;
+  margin-top: 0.65rem;
+  padding: 0.5rem 1.75rem;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: #0a0a0a;
+  border: 1px solid #0a0a0a;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.what-matters-form-submit:hover {
+  background: #222;
+  border-color: #222;
 }
 
 @media (min-width: 1025px) {
