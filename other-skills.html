@@ -128,13 +128,15 @@
 
         <div class="other-skills-cta" id="what-matters-form">
           <p class="other-skills-cta-intro">
-            Use the form below to tell us about your interests, goals, and experience. We review every submission and will
-            follow up using the contact information you provide.
+            Use the form below to tell us about your interests and goals. Upload a resume if you would like to share
+            your experience that way. We review every submission and will follow up using the contact information you
+            provide.
           </p>
           <form
             class="what-matters-form"
             name="what-matters"
             method="POST"
+            enctype="multipart/form-data"
             data-netlify="true"
             netlify-honeypot="bot-field"
             action="/other-skills.html"
@@ -164,14 +166,15 @@
               required
             ></textarea>
 
-            <label for="wm-experience">Tell us about your experience</label>
+            <label for="wm-resume">Upload your resume (PDF or Word)</label>
             <input
-              id="wm-experience"
-              name="experience"
-              type="text"
-              placeholder="Experience summary"
-              autocomplete="off"
+              id="wm-resume"
+              name="resume"
+              type="file"
+              accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+              class="what-matters-form-file"
             >
+            <p class="what-matters-form-hint">PDF, .doc, or .docx. Optional—attach one file if you would like.</p>
 
             <fieldset class="what-matters-form-fieldset">
               <legend>Are you open to start work right away?</legend>

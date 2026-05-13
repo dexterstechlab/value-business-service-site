@@ -1133,13 +1133,36 @@ body {
   margin-bottom: 0.15rem;
 }
 
+.what-matters-form input[type="file"].what-matters-form-file {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.4rem 0.5rem;
+  font: inherit;
+  font-size: 0.86rem;
+  line-height: 1.4;
+  background: #ffffff;
+  border: 1px solid #1a1a1a;
+  border-radius: 2px;
+  margin-bottom: 0.2rem;
+  cursor: pointer;
+}
+
+.what-matters-form-hint {
+  margin: 0 0 0.45rem;
+  font-size: 0.78rem;
+  line-height: 1.35;
+  color: rgba(222, 234, 248, 0.75);
+}
+
 .what-matters-form input::placeholder,
 .what-matters-form textarea::placeholder {
   color: rgba(20, 32, 46, 0.45);
 }
 
 .what-matters-form input:focus,
-.what-matters-form textarea:focus {
+.what-matters-form textarea:focus,
+.what-matters-form input[type="file"].what-matters-form-file:focus {
   outline: none;
   box-shadow: 0 0 0 2px rgba(157, 200, 255, 0.65);
 }
