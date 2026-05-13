@@ -595,6 +595,21 @@ body {
     transform: none;
   }
 
+  .page-other-skills .other-skills-hero-inner > h1,
+  .page-other-skills .other-skills-hero-inner > p.other-skills-lede,
+  .page-other-skills .other-skills-grid > .other-skills-column {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .page-other-skills .other-skills-cta {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    pointer-events: auto !important;
+  }
+
   .footer-credit-heart {
     animation: none;
   }
@@ -957,6 +972,30 @@ body {
   }
 }
 
+@keyframes other-skills-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes other-skills-cta-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+    pointer-events: none;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+}
+
 /* Other skills / What matters to you page */
 .other-skills-hero {
   background: linear-gradient(165deg, #0d1f33 0%, #152a45 42%, #1f3a5c 100%);
@@ -989,6 +1028,45 @@ body {
 
 .other-skills-lede + .other-skills-lede {
   margin-top: 0.9rem;
+}
+
+.page-other-skills .other-skills-hero-inner > h1,
+.page-other-skills .other-skills-hero-inner > p.other-skills-lede,
+.page-other-skills .other-skills-grid > .other-skills-column {
+  opacity: 0;
+  animation-name: other-skills-reveal;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  animation-fill-mode: forwards;
+}
+
+.page-other-skills .other-skills-hero-inner > h1 {
+  animation-duration: 1.75s;
+  animation-delay: 0.12s;
+}
+
+.page-other-skills .other-skills-hero-inner > p.other-skills-lede:first-of-type {
+  animation-duration: 1.55s;
+  animation-delay: 1.05s;
+}
+
+.page-other-skills .other-skills-hero-inner > p.other-skills-lede:last-of-type {
+  animation-duration: 1.55s;
+  animation-delay: 1.68s;
+}
+
+.page-other-skills .other-skills-grid > .other-skills-column:nth-child(1) {
+  animation-duration: 1.6s;
+  animation-delay: 2.85s;
+}
+
+.page-other-skills .other-skills-grid > .other-skills-column:nth-child(2) {
+  animation-duration: 1.6s;
+  animation-delay: 4.15s;
+}
+
+.page-other-skills .other-skills-grid > .other-skills-column:nth-child(3) {
+  animation-duration: 1.6s;
+  animation-delay: 5.45s;
 }
 
 .other-skills-pillars {
@@ -1074,11 +1152,14 @@ body {
   object-fit: cover;
 }
 
-.other-skills-cta {
+.page-other-skills .other-skills-cta {
   margin-top: 2.75rem;
   padding-top: 2rem;
   text-align: center;
   border-top: 1px solid rgba(255, 255, 255, 0.14);
+  opacity: 0;
+  /* Third column (A Simple Approach): delay 5.45s + duration 1.6s = 7.05s */
+  animation: other-skills-cta-reveal 1.2s cubic-bezier(0.22, 1, 0.36, 1) 7.08s both;
 }
 
 .other-skills-cta-intro {
