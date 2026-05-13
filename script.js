@@ -94,12 +94,14 @@ if (servicesLightbox && servicesLightboxOpen) {
 
 const whatMattersForm = document.getElementById("what-matters-form-element");
 if (whatMattersForm) {
-  const successPanel = document.getElementById("what-matters-form-success");
   const errorPanel = document.getElementById("what-matters-form-error");
-  const submitAnotherBtn = document.getElementById("what-matters-submit-another");
+  const videoWrap = document.getElementById("what-matters-success-video-wrap");
+  const successVideo = document.getElementById("what-matters-success-video");
   const resumeInput = document.getElementById("wm-resume");
   const resumeStatus = document.getElementById("wm-resume-status");
   const submitBtn = whatMattersForm.querySelector('button[type="submit"]');
+  const prefersReducedMotion =
+    typeof window.matchMedia === "function" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   const resumeEmptyLabel = "No file selected yet. Choose a PDF or Word document above.";
 
@@ -118,6 +120,11 @@ if (whatMattersForm) {
   resumeInput?.addEventListener("change", syncResumeStatus);
   syncResumeStatus();
 
+  const phoneInput = document.getElementById("wm-phone");
+  phoneInput?.addEventListener("input", () => {
+    phoneInput.value = phoneInput.value.replace(/\D/g, "").slice(0, 15);
+  });
+
   whatMattersForm.addEventListener("submit", async (event) => {
     event.preventDefault();
     if (errorPanel) {
@@ -133,6 +140,44 @@ if (whatMattersForm) {
 
     if (submitBtn) submitBtn.disabled = true;
 
+    const releaseSubmit = () => {
+      if (submitBtn) submitBtn.disabled = false;
+    };
+
+    const showFormAgain = () => {
+      if (videoWrap) videoWrap.hidden = true;
+      if (successVideo) {
+        successVideo.pause();
+        successVideo.currentTime = 0;
+      }
+      whatMattersForm.hidden = false;
+      document.getElementById("wm-full-name")?.focus();
+    };
+
+    const playSuccessVideo = async () => {
+      if (prefersReducedMotion || !videoWrap || !successVideo) {
+        releaseSubmit();
+        document.getElementById("wm-full-name")?.focus();
+        return;
+      }
+      whatMattersForm.hidden = true;
+      videoWrap.hidden = false;
+      successVideo.currentTime = 0;
+      const onEnded = () => {
+        successVideo.removeEventListener("ended", onEnded);
+        showFormAgain();
+        releaseSubmit();
+      };
+      successVideo.addEventListener("ended", onEnded);
+      try {
+        await successVideo.play();
+      } catch {
+        successVideo.removeEventListener("ended", onEnded);
+        showFormAgain();
+        releaseSubmit();
+      }
+    };
+
     try {
       const response = await fetch(action, {
         method: "POST",
@@ -145,29 +190,14 @@ if (whatMattersForm) {
 
       whatMattersForm.reset();
       syncResumeStatus();
-      whatMattersForm.hidden = true;
-      if (successPanel) {
-        successPanel.hidden = false;
-        successPanel.focus();
-      }
+      await playSuccessVideo();
     } catch {
       if (errorPanel) {
         errorPanel.textContent =
           "Something went wrong. Please try again in a moment, or reach out through the Contact page.";
         errorPanel.hidden = false;
       }
-    } finally {
-      if (submitBtn) submitBtn.disabled = false;
+      releaseSubmit();
     }
-  });
-
-  submitAnotherBtn?.addEventListener("click", () => {
-    if (successPanel) successPanel.hidden = true;
-    whatMattersForm.hidden = false;
-    if (errorPanel) {
-      errorPanel.hidden = true;
-      errorPanel.textContent = "";
-    }
-    document.getElementById("wm-full-name")?.focus();
   });
 }

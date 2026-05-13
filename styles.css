@@ -1244,15 +1244,17 @@ body {
 .what-matters-form textarea {
   width: 100%;
   box-sizing: border-box;
-  padding: 0.45rem 0.55rem;
+  padding: 0.4rem 0.5rem;
   font: inherit;
-  font-size: 0.92rem;
-  line-height: 1.35;
-  color: #14202e;
-  background: #ffffff;
+  font-size: 0.88rem;
+  font-weight: 500;
+  line-height: 1.45;
+  color: #0f1a26;
+  color-scheme: light;
+  background: #f5f7fa;
   border: 1px solid #1a1a1a;
   border-radius: 2px;
-  margin-bottom: 0.15rem;
+  margin-bottom: 0.2rem;
 }
 
 .what-matters-form input[type="file"].what-matters-form-file {
@@ -1261,13 +1263,52 @@ body {
   box-sizing: border-box;
   padding: 0.4rem 0.5rem;
   font: inherit;
-  font-size: 0.86rem;
-  line-height: 1.4;
-  background: #ffffff;
+  font-size: 0.88rem;
+  font-weight: 500;
+  line-height: 1.45;
+  color: #0f1a26;
+  color-scheme: light;
+  background: #f5f7fa;
   border: 1px solid #1a1a1a;
   border-radius: 2px;
   margin-bottom: 0.2rem;
   cursor: pointer;
+}
+
+.what-matters-form input[type="file"].what-matters-form-file::file-selector-button,
+.what-matters-form input[type="file"].what-matters-form-file::-webkit-file-upload-button {
+  margin-right: 0.75rem;
+  padding: 0.45rem 0.85rem;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #0b1a2b;
+  background: linear-gradient(180deg, #eef3f9, #d8e3f0);
+  border: 1px solid #4a6278;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.what-matters-form input[type="file"].what-matters-form-file::-moz-file-upload-button {
+  margin-right: 0.75rem;
+  padding: 0.45rem 0.85rem;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #0b1a2b;
+  background: linear-gradient(180deg, #eef3f9, #d8e3f0);
+  border: 1px solid #4a6278;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.what-matters-form input[type="file"].what-matters-form-file::file-selector-button:hover,
+.what-matters-form input[type="file"].what-matters-form-file::-webkit-file-upload-button:hover {
+  background: linear-gradient(180deg, #ffffff, #e8eef6);
+}
+
+.what-matters-form input[type="file"].what-matters-form-file::-moz-file-upload-button:hover {
+  background: linear-gradient(180deg, #ffffff, #e8eef6);
 }
 
 .what-matters-form-hint {
@@ -1304,27 +1345,28 @@ body {
   font-weight: 700;
 }
 
-.what-matters-form-success {
+.what-matters-success-video-wrap {
   max-width: 26rem;
   margin: 0 auto;
-  padding: 1.35rem 1.25rem 1.4rem;
-  text-align: center;
+  padding: 0.35rem;
   background: rgba(4, 16, 32, 0.45);
   border: 1px solid rgba(157, 200, 255, 0.35);
   border-radius: 10px;
+  box-sizing: border-box;
 }
 
-.what-matters-form-success:focus {
+.what-matters-success-video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  background: #0a1420;
+}
+
+.what-matters-success-video:focus {
   outline: none;
   box-shadow: 0 0 0 2px rgba(157, 200, 255, 0.45);
-}
-
-.what-matters-form-success-message {
-  margin: 0 0 1rem;
-  font-size: 1.05rem;
-  font-weight: 600;
-  line-height: 1.45;
-  color: #ffffff;
+  border-radius: 6px;
 }
 
 .what-matters-form-error {
@@ -1349,7 +1391,8 @@ body {
 
 .what-matters-form input::placeholder,
 .what-matters-form textarea::placeholder {
-  color: rgba(20, 32, 46, 0.45);
+  color: rgba(15, 26, 38, 0.5);
+  font-weight: 500;
 }
 
 .what-matters-form input:focus,

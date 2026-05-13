@@ -153,10 +153,30 @@
             <input id="wm-full-name" name="full-name" type="text" placeholder="Your name" required autocomplete="name">
 
             <label for="wm-email">Your email*</label>
-            <input id="wm-email" name="email" type="email" placeholder="Your email address" required autocomplete="email">
+            <input
+              id="wm-email"
+              name="email"
+              type="email"
+              inputmode="email"
+              autocomplete="email"
+              placeholder="name@company.com"
+              required
+              pattern="[a-zA-Z0-9._+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+              title="Use a full address with @ and a domain ending (for example, .com or .org)."
+            >
 
             <label for="wm-phone">Phone Number</label>
-            <input id="wm-phone" name="phone" type="tel" placeholder="Phone number" autocomplete="tel">
+            <input
+              id="wm-phone"
+              name="phone"
+              type="tel"
+              inputmode="numeric"
+              autocomplete="tel"
+              placeholder="10-15 digits only"
+              maxlength="15"
+              pattern="[0-9]{10,15}"
+              title="Digits only (no spaces or dashes). Leave blank or enter 10–15 numbers, e.g. a US number without the +1."
+            >
 
             <label for="wm-interests">Tell us your interests and goals*</label>
             <textarea
@@ -174,9 +194,10 @@
               type="file"
               accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
               class="what-matters-form-file"
+              aria-describedby="wm-resume-hint"
             >
             <p id="wm-resume-status" class="what-matters-form-file-status" role="status" aria-live="polite"></p>
-            <p class="what-matters-form-hint">PDF, .doc, or .docx. Optional—attach one file if you would like.</p>
+            <p id="wm-resume-hint" class="what-matters-form-hint">PDF, .doc, or .docx. Optional—attach one file if you would like.</p>
 
             <fieldset class="what-matters-form-fieldset">
               <legend>Are you open to start work right away?</legend>
@@ -189,11 +210,16 @@
             <button type="submit" class="what-matters-form-submit">Submit</button>
           </form>
 
-          <div id="what-matters-form-success" class="what-matters-form-success" hidden tabindex="-1">
-            <p class="what-matters-form-success-message">Form submitted. Want to submit another?</p>
-            <button type="button" class="what-matters-form-submit what-matters-form-success-again" id="what-matters-submit-another">
-              Submit another
-            </button>
+          <div id="what-matters-success-video-wrap" class="what-matters-success-video-wrap" hidden>
+            <video
+              id="what-matters-success-video"
+              class="what-matters-success-video"
+              playsinline
+              preload="metadata"
+              aria-label="Submission confirmed"
+            >
+              <source src="assets/submit-success.mp4" type="video/mp4">
+            </video>
           </div>
           <p id="what-matters-form-error" class="what-matters-form-error" role="alert" hidden></p>
         </div>
