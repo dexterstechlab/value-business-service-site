@@ -193,11 +193,6 @@ body {
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.48);
 }
 
-.page-about.is-ready main {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 .page-about.is-ready .about-hero-content {
   opacity: 1;
   transform: translateY(0) scale(1);
@@ -787,19 +782,6 @@ body {
   fill: currentColor;
 }
 
-.social-links svg.social-icon--instagram {
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.35;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.social-links svg.social-icon--instagram .ig-dot {
-  fill: currentColor;
-  stroke: none;
-}
-
 .mobile-toggle {
   display: none;
   border: 1px solid rgba(255, 255, 255, 0.35);
@@ -1295,6 +1277,76 @@ body {
   color: rgba(222, 234, 248, 0.75);
 }
 
+.what-matters-form-file-status {
+  margin: 0 0 0.5rem;
+  min-height: 2.75rem;
+  padding: 0.55rem 0.65rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: rgba(200, 215, 235, 0.55);
+  background: rgba(4, 16, 32, 0.35);
+  border: 1px dashed rgba(255, 255, 255, 0.22);
+  border-radius: 6px;
+  text-align: center;
+}
+
+.what-matters-form-file-status.what-matters-form-file-status--active {
+  color: #0b1a2b;
+  background: linear-gradient(180deg, #e8f4ff, #d4e8fc);
+  border: 1px solid rgba(31, 77, 124, 0.55);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+}
+
+.what-matters-form-file-status.what-matters-form-file-status--active::before {
+  content: "✓ ";
+  color: #1f6b3a;
+  font-weight: 700;
+}
+
+.what-matters-form-success {
+  max-width: 26rem;
+  margin: 0 auto;
+  padding: 1.35rem 1.25rem 1.4rem;
+  text-align: center;
+  background: rgba(4, 16, 32, 0.45);
+  border: 1px solid rgba(157, 200, 255, 0.35);
+  border-radius: 10px;
+}
+
+.what-matters-form-success:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(157, 200, 255, 0.45);
+}
+
+.what-matters-form-success-message {
+  margin: 0 0 1rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: #ffffff;
+}
+
+.what-matters-form-error {
+  max-width: 26rem;
+  margin: 0.85rem auto 0;
+  padding: 0.65rem 0.85rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #ffe8e8;
+  background: rgba(120, 24, 24, 0.55);
+  border: 1px solid rgba(255, 160, 160, 0.45);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.what-matters-form-submit:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
 .what-matters-form input::placeholder,
 .what-matters-form textarea::placeholder {
   color: rgba(20, 32, 46, 0.45);
@@ -1360,7 +1412,7 @@ body {
   cursor: pointer;
 }
 
-.what-matters-form-submit:hover {
+.what-matters-form-submit:hover:not(:disabled) {
   background: #222;
   border-color: #222;
 }

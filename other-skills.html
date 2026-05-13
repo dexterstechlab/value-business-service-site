@@ -134,6 +134,7 @@
           </p>
           <form
             class="what-matters-form"
+            id="what-matters-form-element"
             name="what-matters"
             method="POST"
             enctype="multipart/form-data"
@@ -174,6 +175,7 @@
               accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
               class="what-matters-form-file"
             >
+            <p id="wm-resume-status" class="what-matters-form-file-status" role="status" aria-live="polite"></p>
             <p class="what-matters-form-hint">PDF, .doc, or .docx. Optional—attach one file if you would like.</p>
 
             <fieldset class="what-matters-form-fieldset">
@@ -186,6 +188,14 @@
 
             <button type="submit" class="what-matters-form-submit">Submit</button>
           </form>
+
+          <div id="what-matters-form-success" class="what-matters-form-success" hidden tabindex="-1">
+            <p class="what-matters-form-success-message">Form submitted. Want to submit another?</p>
+            <button type="button" class="what-matters-form-submit what-matters-form-success-again" id="what-matters-submit-another">
+              Submit another
+            </button>
+          </div>
+          <p id="what-matters-form-error" class="what-matters-form-error" role="alert" hidden></p>
         </div>
       </div>
     </section>
