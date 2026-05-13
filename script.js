@@ -125,6 +125,44 @@ if (whatMattersForm) {
     phoneInput.value = phoneInput.value.replace(/\D/g, "").slice(0, 15);
   });
 
+  const releaseSubmit = () => {
+    if (submitBtn) submitBtn.disabled = false;
+  };
+
+  const showFormAgain = () => {
+    if (videoWrap) videoWrap.hidden = true;
+    if (successVideo) {
+      successVideo.pause();
+      successVideo.currentTime = 0;
+    }
+    whatMattersForm.hidden = false;
+    document.getElementById("wm-full-name")?.focus();
+  };
+
+  const playSuccessVideo = async () => {
+    if (prefersReducedMotion || !videoWrap || !successVideo) {
+      releaseSubmit();
+      document.getElementById("wm-full-name")?.focus();
+      return;
+    }
+    whatMattersForm.hidden = true;
+    videoWrap.hidden = false;
+    successVideo.currentTime = 0;
+    const onEnded = () => {
+      successVideo.removeEventListener("ended", onEnded);
+      showFormAgain();
+      releaseSubmit();
+    };
+    successVideo.addEventListener("ended", onEnded);
+    try {
+      await successVideo.play();
+    } catch {
+      successVideo.removeEventListener("ended", onEnded);
+      showFormAgain();
+      releaseSubmit();
+    }
+  };
+
   whatMattersForm.addEventListener("submit", async (event) => {
     event.preventDefault();
     if (errorPanel) {
@@ -139,44 +177,6 @@ if (whatMattersForm) {
     }
 
     if (submitBtn) submitBtn.disabled = true;
-
-    const releaseSubmit = () => {
-      if (submitBtn) submitBtn.disabled = false;
-    };
-
-    const showFormAgain = () => {
-      if (videoWrap) videoWrap.hidden = true;
-      if (successVideo) {
-        successVideo.pause();
-        successVideo.currentTime = 0;
-      }
-      whatMattersForm.hidden = false;
-      document.getElementById("wm-full-name")?.focus();
-    };
-
-    const playSuccessVideo = async () => {
-      if (prefersReducedMotion || !videoWrap || !successVideo) {
-        releaseSubmit();
-        document.getElementById("wm-full-name")?.focus();
-        return;
-      }
-      whatMattersForm.hidden = true;
-      videoWrap.hidden = false;
-      successVideo.currentTime = 0;
-      const onEnded = () => {
-        successVideo.removeEventListener("ended", onEnded);
-        showFormAgain();
-        releaseSubmit();
-      };
-      successVideo.addEventListener("ended", onEnded);
-      try {
-        await successVideo.play();
-      } catch {
-        successVideo.removeEventListener("ended", onEnded);
-        showFormAgain();
-        releaseSubmit();
-      }
-    };
 
     try {
       const response = await fetch(action, {

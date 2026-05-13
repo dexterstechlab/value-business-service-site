@@ -1347,7 +1347,7 @@ body {
 
 .what-matters-success-video-wrap {
   max-width: 26rem;
-  margin: 0 auto;
+  margin: 1.5rem auto 0;
   padding: 0.35rem;
   background: rgba(4, 16, 32, 0.45);
   border: 1px solid rgba(157, 200, 255, 0.35);
