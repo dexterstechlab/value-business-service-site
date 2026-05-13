@@ -24,6 +24,31 @@ if (document.body.classList.contains("page-about")) {
       document.body.classList.add("is-ready");
     });
   });
+
+  const rotatorText = document.getElementById("why-value-rotator-text");
+  if (rotatorText) {
+    const phrases = [
+      "Flexible",
+      "Support",
+      "Responsible",
+      "Reliable",
+      "Experience you can count on",
+    ];
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      rotatorText.textContent = phrases.join(" · ");
+      rotatorText.classList.add("why-value-rotator__text--static");
+    } else {
+      let idx = 0;
+      window.setInterval(() => {
+        idx = (idx + 1) % phrases.length;
+        rotatorText.textContent = phrases[idx];
+        rotatorText.classList.remove("why-value-rotator__text--pulse");
+        void rotatorText.offsetWidth;
+        rotatorText.classList.add("why-value-rotator__text--pulse");
+      }, 3000);
+    }
+  }
 }
 
 const servicesLightbox = document.getElementById("services-showcase-lightbox");

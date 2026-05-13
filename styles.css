@@ -217,9 +217,58 @@ body {
 }
 
 .why-intro {
-  margin: 0 auto 1.9rem;
+  margin: 0 auto 1.25rem;
   max-width: 640px;
   line-height: 1.6;
+}
+
+.why-value-rotator {
+  margin: 0 auto 1.75rem;
+  min-height: 3.4em;
+  width: 100%;
+  max-width: min(36rem, 100%);
+  padding: 1.35rem 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.why-value-rotator__text {
+  display: inline-block;
+  margin: 0;
+  font-size: clamp(1.65rem, 3.2vw, 2.35rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  text-shadow:
+    0 0 28px rgba(157, 200, 255, 0.55),
+    0 0 2px rgba(4, 20, 37, 0.35);
+}
+
+.why-value-rotator__text--pulse {
+  animation: why-value-pulse 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.why-value-rotator__text--static {
+  font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+  font-weight: 600;
+  line-height: 1.45;
+  text-shadow: none;
+  color: rgba(230, 240, 255, 0.95);
+}
+
+@keyframes why-value-pulse {
+  from {
+    opacity: 0.25;
+    transform: translateY(14px) scale(0.96);
+    filter: blur(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
 }
 
 .why-grid {
@@ -915,6 +964,16 @@ body {
 
   .why-section h2 {
     font-size: 2rem;
+  }
+
+  .why-value-rotator {
+    min-height: 2.85em;
+    margin-bottom: 1.4rem;
+    padding: 1.1rem 1.25rem;
+  }
+
+  .why-value-rotator__text {
+    font-size: clamp(1.35rem, 5.5vw, 1.85rem);
   }
 
   .why-grid {
