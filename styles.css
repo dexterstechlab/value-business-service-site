@@ -69,6 +69,11 @@ body {
   color: var(--hover);
 }
 
+.primary-nav a[aria-current="page"] {
+  color: var(--hover);
+  font-weight: 600;
+}
+
 .cta-button {
   color: var(--text);
   text-decoration: none;
@@ -953,19 +958,6 @@ body {
 }
 
 /* Other skills / What matters to you page */
-.page-other-skills {
-  font-family: Inter, "Segoe UI", system-ui, -apple-system, sans-serif;
-}
-
-.page-other-skills .primary-nav {
-  gap: 0.95rem;
-}
-
-.page-other-skills .primary-nav a[aria-current="page"] {
-  color: var(--hover);
-  font-weight: 600;
-}
-
 .other-skills-hero {
   background: linear-gradient(165deg, #0d1f33 0%, #152a45 42%, #1f3a5c 100%);
   color: #e8f0fb;
