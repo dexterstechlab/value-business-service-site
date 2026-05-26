@@ -313,7 +313,7 @@ button.btn--primary {
 .about-hero {
   position: relative;
   min-height: 520px;
-  background-image: url("assets/about-banner.png");
+  background-image: url("assets/about-hero.png");
   background-size: cover;
   background-position: center;
   display: flex;
