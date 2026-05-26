@@ -497,65 +497,179 @@ button.btn--primary {
   color: #c4d8c0;
 }
 
+/* ── Services page ─────────────────────────────────────── */
 .services-hero {
-  background: linear-gradient(180deg, #0d2b1e, #111111);
+  background: linear-gradient(160deg, #0d2b1e 0%, #111111 100%);
   color: #e8f0e8;
-  text-align: center;
-  padding: 2.1rem 0 1.6rem;
+  padding: 3.5rem 0 3rem;
 }
 
-.services-hero h1 {
+.services-hero-label {
   margin: 0 0 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #d4af37;
+}
+
+.services-hero-heading {
+  margin: 0 0 0.8rem;
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.15;
   color: #ffffff;
-  font-size: 2.4rem;
 }
 
-.services-hero p {
-  margin: 0 auto;
-  max-width: 700px;
+.services-hero-sub {
+  margin: 0;
   font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(232, 240, 232, 0.82);
+  max-width: 560px;
 }
 
-.services-showcase {
-  background: #111111;
-  padding: 0.35rem 0 0.9rem;
+/* Service category sections */
+.svc-category {
+  background: #faf9f6;
+  padding: 3.5rem 0 3.5rem;
+  border-bottom: 1px solid #e5e0d8;
 }
 
-.services-showcase-inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.svc-category--alt {
+  background: #f2f0eb;
 }
 
-.services-showcase-hint {
-  display: none;
+.svc-category:last-of-type {
+  border-bottom: none;
+}
+
+.svc-category-header {
+  margin-bottom: 2.2rem;
+}
+
+.svc-category-label {
   margin: 0 0 0.45rem;
-  font-size: 0.88rem;
-  color: rgba(220, 235, 210, 0.78);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: #1e4d2b;
 }
 
-.services-showcase-trigger {
-  display: block;
+.svc-category-heading {
+  margin: 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: clamp(1.7rem, 2.8vw, 2.5rem);
+  line-height: 1.2;
+  color: #111111;
+}
+
+/* 4-column card grid */
+.svc-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+.svc-card {
+  background: #ffffff;
+  border: 1px solid #e0dbd2;
+  border-radius: 10px;
+  padding: 1.5rem 1.25rem;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.svc-card:hover {
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.09);
+  transform: translateY(-3px);
+}
+
+.svc-card-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  margin-bottom: 0.9rem;
+  color: #1e4d2b;
+}
+
+.svc-card-icon svg {
   width: 100%;
-  max-width: min(1300px, 100%);
-  margin: 0 auto;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  cursor: zoom-in;
-  border-radius: 0;
+  height: 100%;
 }
 
-.services-showcase-trigger img {
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: contain;
+.svc-card h3 {
+  margin: 0 0 0.45rem;
+  font-size: 0.97rem;
+  font-weight: 700;
+  color: #111111;
+  line-height: 1.3;
 }
 
-.services-showcase-trigger:focus-visible {
-  outline: 2px solid #d4af37;
-  outline-offset: 3px;
+.svc-card p {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: #555555;
+}
+
+/* Services CTA banner */
+.svc-cta-banner {
+  background: #1e4d2b;
+  padding: 2.8rem 0;
+}
+
+.svc-cta-banner-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.svc-cta-label {
+  margin: 0 0 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.svc-cta-heading {
+  margin: 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: clamp(1.5rem, 2.4vw, 2.1rem);
+  line-height: 1.2;
+  color: #ffffff;
+}
+
+.svc-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: #d4af37;
+  color: #0d2b1e;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  white-space: nowrap;
+}
+
+.svc-cta-btn:hover {
+  background: #e6c15c;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
 }
 
 .visually-hidden {
@@ -1035,6 +1149,10 @@ button.btn--primary {
   .home-process-step {
     flex: 0 0 100%;
   }
+
+  .svc-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ── About page: intro section ── */
@@ -1328,26 +1446,18 @@ button.btn--primary {
   }
 
   .services-hero {
-    padding: 1.5rem 0 1.2rem;
+    padding: 2.2rem 0 1.8rem;
   }
 
-  .services-hero h1 {
-    font-size: 1.85rem;
+  .svc-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
   }
 
-  .services-hero p {
-    font-size: 0.94rem;
-  }
-
-  .services-showcase-hint {
-    display: block;
-    align-self: center;
-    text-align: center;
-    width: 100%;
-  }
-
-  .services-showcase-trigger {
-    cursor: pointer;
+  .svc-cta-banner-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
   }
 
   .contact-headline h1 {
@@ -1462,22 +1572,31 @@ button.btn--primary {
 
 /* Other skills / What matters to you page */
 .other-skills-hero {
-  background: linear-gradient(165deg, #0d2b1e 0%, #112e1a 42%, #1e4d2b 100%);
+  background: linear-gradient(160deg, #0d2b1e 0%, #111111 100%);
   color: #e8f0e4;
-  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
 }
 
 .other-skills-hero-inner {
   max-width: 920px;
-  padding: 2.35rem 1rem 2.15rem;
-  text-align: center;
+  padding: 3.5rem 1rem 3rem;
 }
 
-.other-skills-hero h1 {
-  margin: 0 0 0.85rem;
-  font-size: clamp(1.75rem, 2.6vw, 2.35rem);
+.other-skills-hero-label {
+  margin: 0 0 0.5rem;
+  font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #d4af37;
+}
+
+.other-skills-hero-heading {
+  margin: 0 0 1rem;
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.15;
   color: #ffffff;
 }
 
@@ -1485,13 +1604,8 @@ button.btn--primary {
   margin: 0;
   font-size: 1.05rem;
   line-height: 1.65;
-  color: rgba(220, 236, 216, 0.92);
+  color: rgba(220, 236, 216, 0.88);
   max-width: 52rem;
-  margin-inline: auto;
-}
-
-.other-skills-lede + .other-skills-lede {
-  margin-top: 0.9rem;
 }
 
 .page-other-skills .other-skills-hero-inner > h1,
@@ -1534,8 +1648,8 @@ button.btn--primary {
 }
 
 .other-skills-pillars {
-  background: #1e4d2b;
-  color: #e8f0e4;
+  background: #faf9f6;
+  color: #111111;
 }
 
 .other-skills-pillars-inner {
@@ -1564,7 +1678,7 @@ button.btn--primary {
   font-weight: 700;
   line-height: 1.25;
   letter-spacing: -0.02em;
-  color: #ffffff;
+  color: #111111;
 }
 
 .other-skills-column--center-copy h2,
@@ -1580,7 +1694,7 @@ button.btn--primary {
   margin: 0;
   line-height: 1.65;
   font-size: 0.98rem;
-  color: rgba(210, 235, 210, 0.92);
+  color: #444444;
 }
 
 .other-skills-list {
@@ -1590,7 +1704,7 @@ button.btn--primary {
   max-width: 24rem;
   line-height: 1.55;
   font-size: 0.98rem;
-  color: rgba(210, 235, 210, 0.92);
+  color: #444444;
   text-align: left;
 }
 
@@ -1620,7 +1734,7 @@ button.btn--primary {
   margin-top: 2.75rem;
   padding-top: 2rem;
   text-align: center;
-  border-top: 1px solid rgba(212, 175, 55, 0.22);
+  border-top: 1px solid #e0dbd2;
   opacity: 0;
   /* Third column (A Simple Approach): delay 5.45s + duration 1.6s = 7.05s */
   animation: other-skills-cta-reveal 1.2s cubic-bezier(0.22, 1, 0.36, 1) 7.08s both;
@@ -1631,7 +1745,7 @@ button.btn--primary {
   max-width: 36rem;
   line-height: 1.6;
   font-size: 0.98rem;
-  color: rgba(210, 235, 210, 0.92);
+  color: #555555;
 }
 
 .what-matters-form {

@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Services | Value Business Service LLC</title>
   <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="page-services">
@@ -44,56 +47,134 @@
   </header>
 
   <main>
+
+    <!-- Intro hero -->
     <section class="services-hero">
       <div class="content-wrap">
-        <h1>Our Services</h1>
-        <p>
-          End-to-end staffing support for transportation, logistics, and warehouse operations.
-        </p>
+        <p class="services-hero-label">Services</p>
+        <h1 class="services-hero-heading">What we do&nbsp;—<br>and who we move.</h1>
+        <p class="services-hero-sub">Two categories. One promise: qualified people, ready when you are.</p>
       </div>
     </section>
 
-    <section class="services-showcase">
-      <div class="content-wrap services-showcase-inner">
-        <p class="services-showcase-hint">Tap image to enlarge</p>
-        <button
-          type="button"
-          class="services-showcase-trigger"
-          id="services-showcase-open"
-          aria-haspopup="dialog"
-          aria-controls="services-showcase-lightbox"
-          aria-expanded="false"
-          aria-label="Enlarge services overview image"
-        >
-          <img src="assets/services-showcase.png" alt="Service process and staffing capabilities overview">
-        </button>
+    <!-- Category 01: Transportation Staffing -->
+    <section class="svc-category" aria-labelledby="svc-cat-1-heading">
+      <div class="content-wrap">
+        <div class="svc-category-header">
+          <p class="svc-category-label">01 &mdash; Transportation Staffing Solutions</p>
+          <h2 id="svc-cat-1-heading" class="svc-category-heading">Drivers you can put behind<br>the wheel today.</h2>
+        </div>
+        <div class="svc-grid">
+
+          <article class="svc-card">
+            <div class="svc-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/><polyline points="16 11 18 13 22 9"/>
+              </svg>
+            </div>
+            <h3>Reliable Drivers</h3>
+            <p>Pre-qualified CDL professionals ready to perform. Every candidate is screened before they reach your door.</p>
+          </article>
+
+          <article class="svc-card">
+            <div class="svc-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h4"/>
+              </svg>
+            </div>
+            <h3>Safety &amp; Compliance</h3>
+            <p>DOT standards, drug screens, MVR checks&nbsp;— handled. We take compliance seriously so you don't have to worry.</p>
+          </article>
+
+          <article class="svc-card">
+            <div class="svc-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/>
+              </svg>
+            </div>
+            <h3>Fast &amp; Flexible Support</h3>
+            <p>Short-term, long-term, or urgent coverage&nbsp;— same response every time. We move as fast as your operation needs.</p>
+          </article>
+
+          <article class="svc-card">
+            <div class="svc-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/>
+              </svg>
+            </div>
+            <h3>Partnership You Can Count On</h3>
+            <p>Committed to your operation, every shift. We build long-term relationships, not one-time placements.</p>
+          </article>
+
+        </div>
       </div>
     </section>
+
+    <!-- Category 02: Logistics & Warehouse -->
+    <section class="svc-category svc-category--alt" aria-labelledby="svc-cat-2-heading">
+      <div class="content-wrap">
+        <div class="svc-category-header">
+          <p class="svc-category-label">02 &mdash; Logistics &amp; Warehouse Partnerships</p>
+          <h2 id="svc-cat-2-heading" class="svc-category-heading">From the dock<br>to the C-suite.</h2>
+        </div>
+        <div class="svc-grid">
+
+          <article class="svc-card">
+            <div class="svc-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/>
+              </svg>
+            </div>
+            <h3>Warehouse Staffing</h3>
+            <p>Pick/pack, loading, inventory, and more. We staff your floor with people who show up ready to work.</p>
+          </article>
+
+          <article class="svc-card">
+            <div class="svc-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="1" y="3" width="15" height="13" rx="1"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+              </svg>
+            </div>
+            <h3>Logistics Support</h3>
+            <p>Keeping the supply chain moving. From dispatchers to coordinators, we fill the roles that keep freight flowing.</p>
+          </article>
+
+          <article class="svc-card">
+            <div class="svc-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/>
+              </svg>
+            </div>
+            <h3>Logistics Executives</h3>
+            <p>Experienced leaders to drive performance. We source management talent that understands operations from the ground up.</p>
+          </article>
+
+          <article class="svc-card">
+            <div class="svc-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/>
+              </svg>
+            </div>
+            <h3>Flexible Partnerships</h3>
+            <p>Scalable solutions tailored to your needs. Whether you need one person or a full team, we adapt to fit.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="svc-cta-banner" aria-label="Call to action">
+      <div class="content-wrap svc-cta-banner-inner">
+        <div class="svc-cta-text">
+          <p class="svc-cta-label">Ready to staff up?</p>
+          <h2 class="svc-cta-heading">Tell us what you need.<br>We'll handle the rest.</h2>
+        </div>
+        <a class="svc-cta-btn" href="contact.html">Request Services</a>
+      </div>
+    </section>
+
   </main>
-
-  <div
-    class="image-lightbox"
-    id="services-showcase-lightbox"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="services-lightbox-title"
-    hidden
-  >
-    <div class="image-lightbox-backdrop" data-lightbox-dismiss></div>
-    <div class="image-lightbox-dialog">
-      <button
-        type="button"
-        class="image-lightbox-close"
-        aria-label="Close enlarged image"
-        data-lightbox-dismiss
-        tabindex="-1"
-      >
-        &times;
-      </button>
-      <h2 id="services-lightbox-title" class="visually-hidden">Services overview</h2>
-      <img src="assets/services-showcase.png" alt="Service process and staffing capabilities overview">
-    </div>
-  </div>
 
   <footer id="contact" class="site-footer">
     <div class="content-wrap footer-grid">
