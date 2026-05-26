@@ -594,6 +594,283 @@ button.btn--primary {
   margin-top: 0.35rem;
 }
 
+/* ── Home page: three showcase sections ── */
+
+/* Section 1: value split */
+.home-value {
+  background: #ffffff;
+  padding: 3rem 0 2.8rem;
+  border-bottom: 3px solid var(--section-green);
+}
+
+.home-value-inner {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  gap: 0 3rem;
+  align-items: center;
+}
+
+.home-value-inner::after {
+  content: "";
+  grid-column: 2;
+  grid-row: 1;
+  background: #e0e0e0;
+  width: 1px;
+  align-self: stretch;
+}
+
+.home-value-left {
+  padding-right: 1rem;
+}
+
+.home-value-left h2 {
+  margin: 0 0 0.65rem;
+  font-size: clamp(1.7rem, 2.5vw, 2.4rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: #111111;
+}
+
+.home-value-left h2::after {
+  content: "";
+  display: block;
+  width: 3rem;
+  height: 3px;
+  background: #d4af37;
+  margin-top: 0.7rem;
+}
+
+.home-value-left p {
+  margin: 0.85rem 0 0;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #333333;
+}
+
+.home-value-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-left: 1rem;
+}
+
+.home-value-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.1rem;
+}
+
+.home-value-icon {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #0d2b1e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #d4af37;
+}
+
+.home-value-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.home-value-card h3 {
+  margin: 0 0 0.3rem;
+  font-size: 0.88rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #111111;
+}
+
+.home-value-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #444444;
+}
+
+/* Section 2: process strip */
+.home-process {
+  background: #f2f2f2;
+  padding: 2.6rem 0;
+}
+
+.home-process-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.home-process-step {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 1.25rem;
+}
+
+.home-process-divider {
+  flex-shrink: 0;
+  width: 1px;
+  align-self: stretch;
+  background: #d0d0d0;
+  margin: 0.5rem 0;
+}
+
+.home-process-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #e4e4e4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333333;
+  margin-bottom: 0.85rem;
+}
+
+.home-process-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.home-process-step h3 {
+  margin: 0 0 0.4rem;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #111111;
+}
+
+.home-process-step p {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: #555555;
+}
+
+/* Section 3: CTA split */
+.home-cta-split {
+  background: #0d2b1e;
+  padding: 2.5rem 0;
+}
+
+.home-cta-split-inner {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  gap: 0 2.5rem;
+  align-items: center;
+}
+
+.home-cta-divider {
+  background: rgba(255, 255, 255, 0.18);
+  width: 1px;
+  align-self: stretch;
+}
+
+.home-cta-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  padding: 0.5rem 1rem;
+}
+
+.home-cta-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #d4af37;
+  margin-bottom: 0.2rem;
+}
+
+.home-cta-icon svg {
+  width: 34px;
+  height: 34px;
+}
+
+.home-cta-panel h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.home-cta-panel > p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: rgba(230, 240, 225, 0.88);
+}
+
+.home-cta-tagline {
+  font-size: 0.9rem !important;
+  font-weight: 600;
+  color: #d4af37 !important;
+}
+
+/* Responsive */
+@media (max-width: 860px) {
+  .home-value-inner {
+    grid-template-columns: 1fr;
+    gap: 2rem 0;
+  }
+
+  .home-value-inner::after {
+    display: none;
+  }
+
+  .home-value-left,
+  .home-value-right {
+    padding: 0;
+  }
+
+  .home-process-inner {
+    flex-wrap: wrap;
+    gap: 1.5rem 0;
+  }
+
+  .home-process-step {
+    flex: 0 0 50%;
+    min-width: 160px;
+  }
+
+  .home-process-divider {
+    display: none;
+  }
+
+  .home-cta-split-inner {
+    grid-template-columns: 1fr;
+    gap: 1.5rem 0;
+  }
+
+  .home-cta-divider {
+    width: 100%;
+    height: 1px;
+    align-self: auto;
+  }
+
+  .home-cta-panel {
+    padding: 0;
+  }
+}
+
+@media (max-width: 540px) {
+  .home-process-step {
+    flex: 0 0 100%;
+  }
+}
+
+/* ── About page: intro section ── */
 .about-intro {
   background: var(--section-green);
   color: #e8f0e4;
@@ -616,60 +893,7 @@ button.btn--primary {
   text-align: center;
 }
 
-@keyframes home-text-reveal {
-  from {
-    opacity: 0;
-    transform: translateY(18px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.page-home .about-intro .content-wrap > h1,
-.page-home .about-intro .content-wrap > p {
-  opacity: 0;
-  transform: translateY(18px);
-  animation: home-text-reveal 1.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-
-.page-home .about-intro .content-wrap > h1 {
-  animation-delay: 0.15s;
-}
-
-.page-home .about-intro .content-wrap > p:nth-child(2) {
-  animation-delay: 0.32s;
-}
-
-.page-home .about-intro .content-wrap > p:nth-child(3) {
-  animation-delay: 0.48s;
-}
-
-.page-home .about-intro .content-wrap > p:nth-child(4) {
-  animation-delay: 0.64s;
-}
-
-.page-home .about-intro .content-wrap > p:nth-child(5) {
-  animation-delay: 0.8s;
-}
-
-.page-home .about-intro .content-wrap > p:nth-child(6) {
-  animation-delay: 0.96s;
-}
-
-.page-home .about-intro .content-wrap > p:nth-child(7) {
-  animation-delay: 1.12s;
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .page-home .about-intro .content-wrap > h1,
-  .page-home .about-intro .content-wrap > p {
-    animation: none;
-    opacity: 1;
-    transform: none;
-  }
-
   .page-other-skills .other-skills-hero-inner > h1,
   .page-other-skills .other-skills-hero-inner > p.other-skills-lede,
   .page-other-skills .other-skills-grid > .other-skills-column {
