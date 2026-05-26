@@ -312,59 +312,99 @@ button.btn--primary {
 
 .about-hero {
   position: relative;
-  min-height: 620px;
+  min-height: 520px;
   background-image: url("assets/about-banner.png");
   background-size: cover;
   background-position: center;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
+  align-items: flex-end;
+  padding: 0;
+  overflow: hidden;
 }
 
 .about-hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(13, 43, 30, 0.3), rgba(13, 43, 30, 0.5));
+  background: linear-gradient(
+    to bottom,
+    rgba(13, 43, 30, 0.1) 0%,
+    rgba(13, 43, 30, 0.3) 45%,
+    rgba(5, 18, 10, 0.75) 100%
+  );
 }
 
-.about-hero-content {
+.about-hero-text {
   position: relative;
   z-index: 1;
-  max-width: 760px;
+  padding: 0 1.5rem 2.8rem;
+  max-width: 720px;
+}
+
+.about-hero-label {
+  margin: 0 0 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.about-hero-heading {
   margin: 0;
-  text-align: center;
-  padding: 1.25rem 1.3rem;
-  color: #f5f2e8;
-  background: rgba(13, 43, 30, 0.55);
-  border: 1px solid rgba(212, 175, 55, 0.3);
-  border-radius: 16px;
-  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.28);
-  backdrop-filter: blur(2px);
-  opacity: 0;
-  transform: translateY(18px) scale(0.985);
-  transition: opacity 1.9s ease, transform 1.9s ease;
-}
-
-.about-hero-content h1 {
-  margin: 0 0 0.5rem;
-  font-size: 2.9rem;
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+  line-height: 1.15;
   color: #ffffff;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.5);
 }
 
-.about-hero-content p {
-  margin: 0 auto;
-  max-width: 680px;
-  line-height: 1.6;
-  font-size: 1.05rem;
-  font-weight: 600;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.48);
+.about-divider {
+  display: none;
 }
 
-.page-about.is-ready .about-hero-content {
-  opacity: 1;
-  transform: translateY(0) scale(1);
+/* Mission two-column section */
+.about-mission {
+  background: #ffffff;
+  padding: 3rem 0 3rem;
+}
+
+.about-mission-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.about-mission-label {
+  margin: 0 0 0.55rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #888888;
+}
+
+.about-mission-heading {
+  margin: 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: clamp(1.7rem, 2.8vw, 2.4rem);
+  line-height: 1.2;
+  color: #111111;
+}
+
+.about-mission-right p {
+  margin: 0 0 1rem;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #333333;
+}
+
+.about-mission-right p:last-child {
+  margin-bottom: 0;
 }
 
 .why-section {
@@ -1271,20 +1311,16 @@ button.btn--primary {
 
 
   .about-hero {
-    min-height: 380px;
+    min-height: 360px;
   }
 
-  .about-hero-content {
-    padding: 0.95rem 0.95rem;
+  .about-hero-text {
+    padding: 0 1rem 2rem;
   }
 
-  .about-hero-content h1 {
-    font-size: 1.9rem;
-  }
-
-  .about-hero-content p {
-    font-size: 0.92rem;
-    max-width: 520px;
+  .about-mission-inner {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
   .why-section {
