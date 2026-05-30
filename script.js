@@ -201,3 +201,43 @@ if (whatMattersForm) {
     }
   });
 }
+
+const driverModal = document.getElementById("driver-modal");
+const driverModalBtn = document.getElementById("driver-options-btn");
+
+if (driverModal && driverModalBtn) {
+  const dismissTargets = driverModal.querySelectorAll("[data-driver-dismiss]");
+  const closeButton = driverModal.querySelector(".driver-modal-close");
+  let lastFocused = null;
+
+  const setOpen = (open) => {
+    driverModal.hidden = !open;
+    driverModalBtn.setAttribute("aria-expanded", String(open));
+    document.body.style.overflow = open ? "hidden" : "";
+
+    if (open) {
+      lastFocused = document.activeElement;
+      if (closeButton) {
+        closeButton.focus();
+      }
+    } else if (lastFocused && typeof lastFocused.focus === "function") {
+      lastFocused.focus();
+    }
+  };
+
+  driverModalBtn.addEventListener("click", () => {
+    setOpen(true);
+  });
+
+  dismissTargets.forEach((el) => {
+    el.addEventListener("click", () => {
+      setOpen(false);
+    });
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !driverModal.hidden) {
+      setOpen(false);
+    }
+  });
+}

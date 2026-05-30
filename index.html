@@ -31,14 +31,12 @@
         <a href="other-skills.html">What Matters</a>
         <a href="contact.html">Contact</a>
         <div class="mobile-nav-actions">
-          <a class="cta-button" href="https://cdlsuite.com/application.php?user_id=291772&theme=default" target="_blank" rel="noopener noreferrer">Apply Here</a>
-          <a class="cta-button cta-secondary" href="https://docs.google.com/forms/d/e/1FAIpQLSfBRlM41fgOw_kGSQpiYgR6-MwRkFhhnmmW_5TWOC_zj1JADA/viewform">Request Services</a>
+          <a class="cta-button" href="index.html#apply">Apply Here</a>
         </div>
       </nav>
 
       <div class="nav-actions">
-        <a class="cta-button" href="https://cdlsuite.com/application.php?user_id=291772&theme=default" target="_blank" rel="noopener noreferrer">Apply Here</a>
-        <a class="cta-button cta-secondary" href="https://docs.google.com/forms/d/e/1FAIpQLSfBRlM41fgOw_kGSQpiYgR6-MwRkFhhnmmW_5TWOC_zj1JADA/viewform">Request Services</a>
+        <a class="cta-button" href="index.html#apply">Apply Here</a>
       </div>
     </div>
   </header>
@@ -64,7 +62,7 @@
         </h1>
         <p class="hero-sub hero-zip hero-zip--3">Reliable drivers, warehouse, and logistics staffing&nbsp;— built on relationships that last.</p>
         <div class="hero-actions hero-zip hero-zip--4">
-          <a class="hero-btn hero-btn--solid" href="https://docs.google.com/forms/d/e/1FAIpQLSfBRlM41fgOw_kGSQpiYgR6-MwRkFhhnmmW_5TWOC_zj1JADA/viewform" target="_blank" rel="noopener noreferrer">Request Services &rarr;</a>
+          <a class="hero-btn hero-btn--solid" href="https://docs.google.com/forms/u/0/d/1OWqKfbNPhXhsoIMzjL20Pgku1X1HufQ34j7RiVjmiLg/viewform?urp=gmail_link&edit_requested=true" target="_blank" rel="noopener noreferrer">Request Services &rarr;</a>
           <a class="hero-btn hero-btn--outline" href="https://cdlsuite.com/application.php?user_id=291772&theme=default" target="_blank" rel="noopener noreferrer">Apply Here</a>
         </div>
       </div>
@@ -163,7 +161,7 @@
     </section>
 
     <!-- Section 3: CTA split panel -->
-    <section class="home-cta-split" aria-label="Partners and applicants">
+    <section id="apply" class="home-cta-split" aria-label="Partners and applicants">
       <div class="content-wrap home-cta-split-inner">
         <div class="home-cta-panel">
           <div class="home-cta-icon" aria-hidden="true">
@@ -174,6 +172,9 @@
           <h3>For Partners</h3>
           <p>Reliable staffing solutions for every stage of your operation.</p>
           <p class="home-cta-tagline">We help you keep your business moving forward.</p>
+          <div class="home-cta-actions">
+            <a class="cta-button" href="https://docs.google.com/forms/u/0/d/1OWqKfbNPhXhsoIMzjL20Pgku1X1HufQ34j7RiVjmiLg/viewform?urp=gmail_link&edit_requested=true" target="_blank" rel="noopener noreferrer">Request Services</a>
+          </div>
         </div>
         <div class="home-cta-divider" aria-hidden="true"></div>
         <div class="home-cta-panel">
@@ -185,9 +186,26 @@
           <h3>For Applicants</h3>
           <p>Real opportunities. Respect for your time.</p>
           <p class="home-cta-tagline">We're here to help you move your career forward.</p>
+          <div class="home-cta-actions">
+            <button type="button" class="cta-button" id="driver-options-btn" aria-haspopup="dialog" aria-controls="driver-modal">Driver</button>
+            <a class="cta-button cta-secondary" href="https://docs.google.com/forms/d/1fDOWSTT-CZ8iubw2GC4eh1E6iMcurmzt7WRxKRebibI/viewform?edit_requested=true" target="_blank" rel="noopener noreferrer">Non-Driver</a>
+          </div>
         </div>
       </div>
     </section>
+
+    <div class="driver-modal" id="driver-modal" role="dialog" aria-modal="true" aria-labelledby="driver-modal-title" hidden>
+      <div class="driver-modal-backdrop" data-driver-dismiss></div>
+      <div class="driver-modal-dialog">
+        <button type="button" class="driver-modal-close" data-driver-dismiss aria-label="Close">&times;</button>
+        <h2 id="driver-modal-title">Driver Application</h2>
+        <p>Choose the option that works best for you.</p>
+        <div class="driver-modal-actions">
+          <a class="cta-button" href="https://cdlsuite.com/application.php?user_id=291772&theme=default" target="_blank" rel="noopener noreferrer">Full Application</a>
+          <a class="cta-button cta-secondary" href="https://cdlsuite.com/quick_app.php?user_id=291772" target="_blank" rel="noopener noreferrer">Quick Application</a>
+        </div>
+      </div>
+    </div>
   </main>
 
   <footer id="contact" class="site-footer">
