@@ -1927,6 +1927,14 @@ a.contact-info-card-value:hover {
   animation: other-skills-cta-reveal 1.1s cubic-bezier(0.22, 1, 0.36, 1) 2.9s both;
 }
 
+.other-skills-cta-eeo {
+  margin: 0 auto 1.35rem;
+  max-width: 40rem;
+  line-height: 1.6;
+  font-size: 0.9rem;
+  color: #555555;
+}
+
 .other-skills-cta-intro {
   margin: 0 auto 1.35rem;
   max-width: 36rem;
