@@ -591,6 +591,10 @@ button.btn--primary {
   min-height: 0;
 }
 
+.svc-category-header--solo {
+  margin-bottom: 0;
+}
+
 .svc-category-header-overlay {
   display: none;
 }
@@ -619,10 +623,10 @@ button.btn--primary {
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
 }
 
-/* 4-column card grid */
+/* 5-column card grid */
 .svc-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 1.25rem;
 }
 
@@ -1690,6 +1694,10 @@ a.contact-info-card-value:hover {
   .svc-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
+  }
+
+  .svc-grid .svc-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
   }
 
   .svc-cta-banner-inner {
