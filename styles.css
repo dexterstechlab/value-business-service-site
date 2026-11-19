@@ -864,6 +864,105 @@ button.btn--primary {
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
 }
 
+.consult-body {
+  margin-top: 2.4rem;
+  text-align: center;
+}
+
+.consult-lede {
+  margin: 0 auto 2rem;
+  max-width: 46rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.7;
+  color: #0e3a22;
+}
+
+.consult-heading {
+  margin: 0 0 1rem;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #0e3a22;
+}
+
+.consult-list,
+.consult-steps {
+  list-style: none;
+  margin: 0 0 2.2rem;
+  padding: 0;
+}
+
+.consult-list {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.consult-list li,
+.consult-steps li {
+  background: #0e3a22;
+  border: 1px solid #c9a227;
+  border-radius: 10px;
+  padding: 1.15rem 1.25rem;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease, background 0.22s ease;
+}
+
+.consult-list li:hover,
+.consult-steps li:hover {
+  transform: translateY(-4px);
+  background: #134a2c;
+  border-color: #e6c15c;
+  box-shadow: 0 10px 24px rgba(14, 58, 34, 0.28), 0 0 0 1px rgba(212, 175, 55, 0.35);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .consult-list li,
+  .consult-steps li {
+    transition: none;
+  }
+
+  .consult-list li:hover,
+  .consult-steps li:hover {
+    transform: none;
+  }
+}
+
+.consult-list h4,
+.consult-steps h4 {
+  margin: 0 0 0.3rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #d4af37;
+}
+
+.consult-list p,
+.consult-steps p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #f6edd4;
+}
+
+.consult-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+.consult-btn {
+  margin-top: 0.25rem;
+}
+
+.consult-btn[hidden] {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  .consult-steps {
+    grid-template-columns: 1fr;
+  }
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
