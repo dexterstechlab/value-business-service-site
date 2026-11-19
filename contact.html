@@ -40,14 +40,7 @@
 
   <main>
 
-    <!-- Hero -->
-    <section class="contact-hero">
-      <div class="contact-hero-overlay"></div>
-      <div class="contact-hero-text">
-        <p class="contact-hero-label">Contact</p>
-        <h1 class="contact-hero-heading">Wave us down.</h1>
-      </div>
-    </section>
+    <section class="contact-hero" aria-hidden="true"></section>
 
     <!-- Contact body -->
     <section class="contact-body" id="contact-form">
@@ -56,7 +49,7 @@
         <!-- Left: form -->
         <div class="contact-form-col">
           <p class="contact-col-label">Send a Message</p>
-          <h2 class="contact-col-heading">Tell us how we can help.</h2>
+          <h1 class="contact-col-heading">Tell us how we can help.</h1>
 
           <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field"
             action="/contact.html">
@@ -110,7 +103,7 @@
           </form>
         </div>
 
-        <!-- Right: info + map -->
+        <!-- Right: contact info -->
         <div class="contact-info-col">
           <p class="contact-col-label">Reach Us</p>
 
@@ -131,10 +124,10 @@
             <p class="contact-info-card-hours">Mon &ndash; Fri &middot; 8am &ndash; 7pm EST</p>
           </div>
 
-          <div class="contact-map-wrap">
-            <iframe class="contact-map" title="Value Business Services LLC location — Allentown, PA"
-              src="https://maps.google.com/maps?q=Allentown,+PA&t=&z=13&ie=UTF8&iwloc=&output=embed" loading="lazy"
-              allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <div class="contact-info-card">
+            <p class="contact-info-card-label">Payments</p>
+            <p class="contact-info-card-hours">Pay an invoice securely online.</p>
+            <a class="contact-pay-btn" href="https://buy.stripe.com/cNi4gr32f9uEerGdiAfrW00" target="_blank" rel="noopener noreferrer">Make a Payment</a>
           </div>
         </div>
 
@@ -153,6 +146,7 @@
         <h3>Connect</h3>
         <p><a href="tel:+14844756259">484-475-6259</a></p>
         <p><a href="mailto:info@valueservicellc.com">info@valueservicellc.com</a></p>
+        <a class="footer-pay" href="https://buy.stripe.com/cNi4gr32f9uEerGdiAfrW00" target="_blank" rel="noopener noreferrer">Make a Payment</a>
       </div>
       <div class="footer-card">
         <h3>Social</h3>
