@@ -48,6 +48,10 @@ body {
 }
 
 .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  min-width: 0;
   color: var(--nav-brand);
   text-decoration: none;
   font-size: 1.42rem;
@@ -55,6 +59,19 @@ body {
   letter-spacing: -0.015em;
   line-height: 1;
   white-space: nowrap;
+}
+
+.brand-mark {
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  display: block;
+}
+
+.brand-name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .primary-nav {
@@ -1594,9 +1611,12 @@ a.contact-info-card-value:hover {
 
   .brand {
     font-size: 1.05rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    gap: 0.5rem;
+  }
+
+  .brand-mark {
+    width: 36px;
+    height: 36px;
   }
 
   .mobile-toggle {
