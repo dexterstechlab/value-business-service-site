@@ -221,7 +221,7 @@ button.btn--primary {
 .hero-banner {
   --hero-h: clamp(148px, 16.4vw, 196px);
   height: var(--hero-h);
-  background: linear-gradient(to bottom, #ffffff 0 62%, #183120 62% 100%);
+  background: linear-gradient(to bottom, #ffffff 0 62%, #0e3a22 62% 100%);
 }
 
 .hero-banner-inner {
@@ -326,7 +326,7 @@ button.btn--primary {
     width: calc(100% + 2rem);
     margin: 0.35rem -1rem 0;
     padding: 0.8rem 1rem;
-    background: #183120;
+    background: #0e3a22;
   }
 }
 
@@ -656,7 +656,7 @@ button.btn--primary {
 
 /* ── Services page ─────────────────────────────────────── */
 .services-hero {
-  background: linear-gradient(160deg, #0d2b1e 0%, #111111 100%);
+  background: #0e3a22;
   color: #e8f0e8;
   padding: 3.5rem 0 3rem;
 }
@@ -938,7 +938,7 @@ button.btn--primary {
 
 /* ── Contact page ─────────────────────────────────────── */
 .contact-hero {
-  background: linear-gradient(160deg, #0d2b1e 0%, #111111 100%);
+  background: #0e3a22;
   padding: 3.5rem 0 3rem;
 }
 
@@ -1851,7 +1851,7 @@ a.contact-info-card-value:hover {
 
 /* Other skills / What matters to you page */
 .other-skills-hero {
-  background: linear-gradient(160deg, #0d2b1e 0%, #111111 100%);
+  background: #0e3a22;
   color: #e8f0e4;
 }
 
