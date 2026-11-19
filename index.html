@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Value Business Services LLC</title>
   <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,800;1,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="page-home">
@@ -33,36 +36,29 @@
         <a href="services.html">Services</a>
         <a href="other-skills.html">What Matters</a>
         <a href="contact.html">Contact</a>
-        <div class="mobile-nav-actions">
-          <a class="cta-button" href="index.html#apply">Apply Here</a>
-        </div>
       </nav>
-
-      <div class="nav-actions">
-        <a class="cta-button" href="index.html#apply">Apply Here</a>
-      </div>
     </div>
   </header>
 
   <main>
-    <section id="home" class="hero-banner">
-      <img
-        class="hero-video"
-        src="assets/home-hero.png?v=3"
-        alt="Connecting qualified talent with organizations that drive results"
-      />
-      <div class="hero-overlay"></div>
-      <div class="hero-content">
-        <h1 class="hero-heading">
-          <span class="hero-zip hero-zip--1">Moving freight.</span>
-          <span class="hero-zip hero-zip--2">Moving people.</span>
+    <section id="home" class="hero-banner" aria-labelledby="home-heading">
+      <div class="hero-banner-inner">
+        <img class="hero-logo" src="assets/hero-logo.png" alt="" width="170" height="170">
+        <h1 id="home-heading" class="hero-title">
+          <span class="hero-line"><span class="hero-ink">Connecting </span><span class="hero-gold">Qualified Talent</span></span>
+          <span class="hero-line"><span class="hero-ink">with organizations that </span><span class="hero-gold">drive results</span></span>
         </h1>
-        <p class="hero-sub hero-zip hero-zip--3">Reliable drivers, warehouse, and logistics staffing&nbsp;— built on relationships that last.</p>
-        <div class="hero-actions hero-zip hero-zip--4">
-          <a class="hero-btn hero-btn--solid" href="https://script.google.com/macros/s/AKfycbwfvKGCzIX8M-wLDsAMMoAa-cVm6tmikcRN7n4WeOmcHQv-RE8F6awNqrJYZ651OOL3/exec" target="_blank" rel="noopener noreferrer">Request Services &rarr;</a>
-          <a class="hero-btn hero-btn--outline" href="https://cdlsuite.com/application.php?user_id=291772&theme=default" target="_blank" rel="noopener noreferrer">Apply Here</a>
-        </div>
+        <p class="hero-tagline">Consulting, recruitment, placement, and talent acquisition solutions across industries and at every level.</p>
       </div>
+    </section>
+
+    <section class="home-statement" aria-label="Recruitment, talent search, and consulting">
+      <img
+        src="assets/home-statement.png"
+        width="1024"
+        height="576"
+        alt="Connecting qualified talent with organizations that drive results. Supporting operations, strengthening organizations, and building communities."
+      >
     </section>
 
     <!-- Section 1: Value intro split -->
@@ -184,25 +180,11 @@
           <p>Real opportunities. Respect for your time.</p>
           <p class="home-cta-tagline">We're here to help you move your career forward.</p>
           <div class="home-cta-actions">
-            <button type="button" class="cta-button" id="driver-options-btn" aria-haspopup="dialog" aria-controls="driver-modal">Driver</button>
-            <a class="cta-button cta-secondary" href="https://script.google.com/macros/s/AKfycbxPd9L8RQjDoqmspazijO7qOm7A7tRC9uc30d5BXZw7scfjqqw3wkeUxRZuIk5it-bWUw/exec" target="_blank" rel="noopener noreferrer">Non-Driver</a>
+            <a class="cta-button" href="https://docs.google.com/forms/d/e/1FAIpQLSfBRlM41fgOw_kGSQpiYgR6-MwRkFhhnmmW_5TWOC_zj1JADA/viewform?usp=header" target="_blank" rel="noopener noreferrer">Application</a>
           </div>
         </div>
       </div>
     </section>
-
-    <div class="driver-modal" id="driver-modal" role="dialog" aria-modal="true" aria-labelledby="driver-modal-title" hidden>
-      <div class="driver-modal-backdrop" data-driver-dismiss></div>
-      <div class="driver-modal-dialog">
-        <button type="button" class="driver-modal-close" data-driver-dismiss aria-label="Close">&times;</button>
-        <h2 id="driver-modal-title">Driver Application</h2>
-        <p>Choose the option that works best for you.</p>
-        <div class="driver-modal-actions">
-          <a class="cta-button" href="https://cdlsuite.com/application.php?user_id=291772&theme=default" target="_blank" rel="noopener noreferrer">Full Application</a>
-          <a class="cta-button cta-secondary" href="https://cdlsuite.com/quick_app.php?user_id=291772" target="_blank" rel="noopener noreferrer">Quick Application</a>
-        </div>
-      </div>
-    </div>
   </main>
 
   <footer id="contact" class="site-footer">

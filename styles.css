@@ -219,33 +219,127 @@ button.btn--primary {
 }
 
 .hero-banner {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 1024 / 385;
-  overflow: hidden;
-  background-color: #faf9f6;
-  display: flex;
-  align-items: flex-end;
+  --hero-h: clamp(148px, 16.4vw, 196px);
+  height: var(--hero-h);
+  background: linear-gradient(to bottom, #ffffff 0 62%, #183120 62% 100%);
 }
 
-.hero-video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
+.hero-banner-inner {
   height: 100%;
-  object-fit: contain;
-  object-position: center;
-  z-index: 0;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 clamp(0.85rem, 2vw, 1.5rem);
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-rows: 62% 38%;
+  column-gap: clamp(0.7rem, 1.5vw, 1.15rem);
+  align-items: center;
 }
 
-@media (max-width: 700px) {
+.hero-logo {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  height: 90%;
+  width: auto;
+  align-self: center;
+}
+
+.hero-title {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: center;
+  margin: 0;
+  color: #142f1e;
+  font-family: "Montserrat", "Arial Narrow", "Segoe UI", sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.12rem, 3.15vw, 2.65rem);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.hero-line {
+  display: block;
+  white-space: nowrap;
+}
+
+.hero-gold {
+  color: #c4a035;
+}
+
+.hero-tagline {
+  grid-column: 2;
+  grid-row: 2;
+  align-self: center;
+  margin: 0;
+  color: #e0c15a;
+  font-family: "Montserrat", "Segoe UI", sans-serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(0.78rem, 1.35vw, 1.12rem);
+  line-height: 1.25;
+  white-space: nowrap;
+}
+
+@media (max-width: 1100px) {
+  .hero-tagline {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 760px) {
   .hero-banner {
-    aspect-ratio: 787 / 404;
+    height: auto;
+    background: #ffffff;
   }
 
-  .hero-video {
-    object-fit: cover;
+  .hero-banner-inner {
+    height: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    justify-items: center;
+    text-align: center;
+    row-gap: 0.45rem;
+    padding: 1rem 1rem 0;
   }
+
+  .hero-logo {
+    grid-row: 1;
+    grid-column: 1;
+    height: 112px;
+  }
+
+  .hero-title {
+    grid-row: 2;
+    grid-column: 1;
+    font-size: clamp(1.05rem, 4.8vw, 1.4rem);
+  }
+
+  .hero-line,
+  .hero-tagline {
+    white-space: normal;
+  }
+
+  .hero-tagline {
+    grid-row: 3;
+    grid-column: 1;
+    width: calc(100% + 2rem);
+    margin: 0.35rem -1rem 0;
+    padding: 0.8rem 1rem;
+    background: #183120;
+  }
+}
+
+.home-statement {
+  background: #ffffff;
+  padding: 1.75rem 1rem 0.25rem;
+}
+
+.home-statement img {
+  display: block;
+  width: min(100%, 1100px);
+  height: auto;
+  margin: 0 auto;
 }
 
 .hero-overlay {
@@ -1269,83 +1363,6 @@ a.contact-info-card-value:hover {
   flex-wrap: wrap;
   gap: 0.6rem;
   margin-top: 0.6rem;
-}
-
-/* Driver application modal */
-.driver-modal {
-  position: fixed;
-  inset: 0;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1.5rem;
-}
-
-.driver-modal[hidden] {
-  display: none;
-}
-
-.driver-modal-backdrop {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.6);
-}
-
-.driver-modal-dialog {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  max-width: 420px;
-  background: #0d2b1e;
-  border: 1px solid rgba(212, 175, 55, 0.3);
-  border-radius: 12px;
-  padding: 2rem 1.75rem 1.85rem;
-  text-align: center;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
-}
-
-.driver-modal-dialog h2 {
-  margin: 0 0 0.5rem;
-  font-size: 1.4rem;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: #ffffff;
-}
-
-.driver-modal-dialog > p {
-  margin: 0 0 1.5rem;
-  font-size: 0.95rem;
-  color: rgba(230, 240, 225, 0.85);
-}
-
-.driver-modal-actions {
-  display: flex;
-  flex-direction: column;
-  gap: 0.7rem;
-}
-
-.driver-modal-actions .cta-button {
-  width: 100%;
-}
-
-.driver-modal-close {
-  position: absolute;
-  top: 0.6rem;
-  right: 0.8rem;
-  background: none;
-  border: none;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 1.6rem;
-  line-height: 1;
-  cursor: pointer;
-  padding: 0.2rem 0.4rem;
-  transition: color 0.2s ease;
-}
-
-.driver-modal-close:hover {
-  color: #d4af37;
 }
 
 /* Responsive */
