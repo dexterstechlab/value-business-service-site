@@ -583,11 +583,11 @@ button.btn--primary {
 }
 
 .svc-category-header--logistics {
-  background-image: url("assets/services-logistics.jpg");
+  background-image: url("assets/services-logistics.png");
   background-position: center;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
-  aspect-ratio: 1024 / 341;
+  aspect-ratio: 1024 / 572;
   min-height: 0;
 }
 
