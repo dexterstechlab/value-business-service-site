@@ -324,16 +324,30 @@ button.btn--primary {
 .about-hero {
   position: relative;
   width: 100%;
-  aspect-ratio: 1024 / 385;
-  background-color: #0d2b1e;
-  background-image: url("assets/about-hero.jpg");
+  margin: 0;
+  background-color: #0e3a22;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  overflow: hidden;
+}
+
+.about-hero::before {
+  content: "";
+  display: block;
+  width: min(100%, calc(100% * 385 / 1024 * 892 / 503));
+  aspect-ratio: 892 / 503;
+  background-image: url("assets/about-hero.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  display: flex;
-  align-items: flex-end;
-  padding: 0;
-  overflow: hidden;
+}
+
+@media (max-width: 700px) {
+  .about-hero::before {
+    width: 100%;
+  }
 }
 
 .about-hero-overlay {
